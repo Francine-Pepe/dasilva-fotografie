@@ -1,0 +1,48 @@
+@use 'variables'
+    
+@mixin flex-space-between
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+@mixin flex-end
+    width: 100vw
+    display: flex
+    justify-content: flex-end
+    padding: 2rem 2rem 0 0
+
+@mixin dark
+    .dark
+        background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg")     
+
+@mixin light
+    .light
+        background: url("https://live.staticflickr.com/65535/53018570307_cb1cb6f573_b.jpg")
+
+@mixin background-image 
+    .dark, .light
+        background-size: cover
+        object-fit: contain
+        width: 100vw
+        height: 100vh
+        background-repeat: no-repeat
+        // background-position: center
+        overflow: hidden
+
+@mixin button
+    width: auto
+    background-color: transparent
+    border: 0
+    cursor: pointer
+
+@media (max-width: variables.$breakpoint-laptop)
+    @mixin background-image 
+        .dark, .light
+            background-size: cover
+            object-fit: contain
+            width: 100vw
+            height: 100vh
+            background-repeat: no-repeat
+            background-position: center
+            overflow: hidden
+
