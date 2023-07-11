@@ -1,0 +1,28 @@
+@use 'variables'
+@use 'mixins'
+
+body, html
+    width: 100vw
+    height: auto
+    font: variables.$font-stack
+    color: variables.$dark-mode-text-color
+    padding: 0
+    margin: 0
+
+.darkmode-background, .lightmode-background
+    width: 100vw
+    height: 100%
+    overflow: hidden    
+
+.button-darkmode button
+  @include mixins.button
+  @include mixins.flex-end    
+
+.dark
+  @include mixins.dark
+  @include mixins.background-image
+
+
+.light
+  @include mixins.light 
+  @include mixins.background-image   
