@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function FetchApi() {
   const url = "https://dasilva-fotografie-api.vercel.app/fotos";
@@ -16,7 +16,11 @@ function FetchApi() {
 
   return (
     <>
-      
+      {/* <div>
+        {url.map((data: { image: string | undefined; }) => {
+          <img src={data.image} alt="" />
+        })}
+      </div> */}
     </>
   );
 }
