@@ -4,6 +4,13 @@
     display: flex
     justify-content: space-between
     align-items: center
+    border: 1px red solid
+
+@mixin flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 5rem
 
 @mixin flex-end
     width: 100vw
@@ -11,13 +18,37 @@
     justify-content: flex-end
     padding: 2rem 2rem 0 0
 
+@mixin flex-column
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+@mixin borders-horizontal
+    border: 2px solid #174C4F
+
+@mixin lists-style-darkmode
+    font-family: variables.$font-stack
+    color: variables.$dark-mode-text-color
+    text-decoration: none
+
+@mixin lists-style-lightmode
+    color: variables.$light-mode-nav-color
+
+@mixin ul
+    padding-left: 0
+    list-style-type: none
+
 @mixin dark
     .dark
-        background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg")     
+        background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg") 
+        color: variables.$dark-mode-text-color
+   
 
 @mixin light
     .light
         background: url("https://live.staticflickr.com/65535/53018570307_cb1cb6f573_b.jpg")
+        color: variables.$light-mode-text-color
 
 @mixin background-image 
     .dark, .light
@@ -45,4 +76,6 @@
             background-repeat: no-repeat
             background-position: center
             overflow: hidden
+
+
 

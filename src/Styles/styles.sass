@@ -12,7 +12,7 @@ body, html
 .darkmode-background, .lightmode-background
     width: 100vw
     height: 100%
-    overflow: hidden    
+    overflow: hidden
 
 .button-darkmode button
   @include mixins.button
@@ -25,4 +25,31 @@ body, html
 
 .light
   @include mixins.light 
-  @include mixins.background-image   
+  @include mixins.background-image 
+  .navbar-home
+    border-top: variables.$borders-horizontal-lightmode
+    border-bottom: variables.$borders-horizontal-lightmode
+  .navbar-container
+    ul li a
+      @include mixins.lists-style-lightmode
+  
+.navbar-container
+  @include mixins.flex-column
+  position: absolute
+  margin: 5rem 0 0 5rem
+
+.navbar-home
+  @include mixins.flex-center
+  border-top: variables.$borders-horizontal-darkmode
+  border-bottom: variables.$borders-horizontal-darkmode
+  ul
+    @include mixins.ul
+    li a
+      @include mixins.lists-style-darkmode
+      text-transform: variables.$font-uppercase
+
+
+
+  
+
+ 
