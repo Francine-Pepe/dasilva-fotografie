@@ -4,7 +4,6 @@
     display: flex
     justify-content: space-between
     align-items: center
-    border: 1px red solid
 
 @mixin flex-center
     display: flex
@@ -13,52 +12,67 @@
     gap: 5rem
 
 @mixin flex-end
-    width: 100vw
+    // width: 100vw
+    float: right
     display: flex
-    justify-content: flex-end
     padding: 2rem 2rem 0 0
 
 @mixin flex-column
     display: flex
     flex-direction: column
-    align-items: center
+    // align-items: center
     justify-content: center
 
 @mixin borders-horizontal
     border: 2px solid #174C4F
 
 @mixin lists-style-darkmode
-    font-family: variables.$font-stack
     color: variables.$dark-mode-text-color
-    text-decoration: none
 
 @mixin lists-style-lightmode
     color: variables.$light-mode-nav-color
 
-@mixin ul
-    padding-left: 0
-    list-style-type: none
 
 @mixin dark
-    .dark
-        background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg") 
-        color: variables.$dark-mode-text-color
-   
+    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a
+        color: variables.$dark-mode-text-color 
+    .work-container, .about-container, .contact-container
+        background: variables.$background-dark-mode  
 
 @mixin light
-    .light
-        background: url("https://live.staticflickr.com/65535/53018570307_cb1cb6f573_b.jpg")
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a
         color: variables.$light-mode-text-color
+    .work-container, .about-container, .contact-container
+        background: variables.$background-light-mode  
+
+@mixin darkmode
+    // .dark
+        background-color: variables.$background-dark-mode
+        color: variables.$dark-mode-text-color
+
+@mixin lightmode
+    // .light
+        background-color: variables.$background-light-mode
+        color: variables.$light-mode-text-color
+
 
 @mixin background-image 
     .dark, .light
         background-size: cover
         object-fit: contain
-        width: 100vw
-        height: 100vh
+        width: 5rem
         background-repeat: no-repeat
-        // background-position: center
         overflow: hidden
+        position: fixed
+        right: 0
+        z-index: 2
+        
+@mixin background-home
+    background-position: top
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100vh
+
 
 @mixin button
     width: auto
@@ -66,7 +80,21 @@
     border: 0
     cursor: pointer
 
-@media (max-width: variables.$breakpoint-laptop)
+@mixin button-navbar
+    width: 10rem
+    background-color: transparent
+    border: none
+
+@mixin main-containers
+        width: 100vw
+        height: auto
+        display: flex
+        justify-content: center
+        align-items: center
+
+
+
+@media (max-width: variables.$breakpoint-lg)
     @mixin background-image 
         .dark, .light
             background-size: cover

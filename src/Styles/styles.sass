@@ -3,7 +3,7 @@
 
 body, html
     width: 100vw
-    height: auto
+    height: 100vh
     font: variables.$font-stack
     color: variables.$dark-mode-text-color
     padding: 0
@@ -21,10 +21,16 @@ body, html
 .dark
   @include mixins.dark
   @include mixins.background-image
-
+  .home-background 
+    background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg")
+    @include mixins.background-home
+  .navbar-vertical
+    button 
+      @include mixins.button-navbar
+      border-bottom: variables.$borders-horizontal-darkmode
 
 .light
-  @include mixins.light 
+  @include mixins.light
   @include mixins.background-image 
   .navbar-home
     border-top: variables.$borders-horizontal-lightmode
@@ -32,22 +38,84 @@ body, html
   .navbar-container
     ul li a
       @include mixins.lists-style-lightmode
-  
+  .home-background
+    background: url("https://live.staticflickr.com/65535/53018570307_cb1cb6f573_b.jpg")
+    @include mixins.background-home 
+
+  .navbar-vertical
+    button 
+      @include mixins.button-navbar
+      border-bottom: variables.$borders-horizontal-lightmode
+
 .navbar-container
   @include mixins.flex-column
-  position: absolute
-  margin: 5rem 0 0 5rem
+  position: fixed
+  .navbar-home
+    // z-index: 5
 
 .navbar-home
   @include mixins.flex-center
   border-top: variables.$borders-horizontal-darkmode
   border-bottom: variables.$borders-horizontal-darkmode
+
   ul
-    @include mixins.ul
     li a
       @include mixins.lists-style-darkmode
       text-transform: variables.$font-uppercase
 
+.navbar-container-vertical
+  height: 100%
+  position: fixed
+  left: 0
+  top: 17rem
+  
+  .navbar-vertical 
+      @include mixins.flex-column
+      // @include mixins.flex-center
+      padding: 0.5rem 0 0.5rem 0
+      width: 20vw      
+
+  .logo-container
+    width: 80vw
+    display: flex
+    justify-content: space-between    
+    float: right
+
+    .logo
+      width: 80vw
+      display: flex
+      justify-content: center   
+
+.logo-component 
+  @include mixins.flex-center
+  width: 100vw
+  img
+    width: 30vw
+  
+
+.work-container, .about-container, .contact-container
+  @include mixins.main-containers
+  @include mixins.flex-center
+  height: 100vw
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+    
 
 
   
