@@ -6,7 +6,7 @@ function DarkMode() {
     <>
       <div className="dark">
         <button>
-          <Icon icon="gg:dark-mode" color="#ffffff" width="25" height="25" />
+          <Icon icon="gg:dark-mode" color="#FFFFFF" width="25" height="25" />
         </button>
       </div>
     </>
