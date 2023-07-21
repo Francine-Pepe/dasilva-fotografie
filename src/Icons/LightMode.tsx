@@ -6,7 +6,7 @@ function LightMode() {
     <>
       <div className="light">
         <button>
-          <Icon icon="gg:dark-mode" color="#ffffff" width="25" height="25" />
+          <Icon icon="gg:dark-mode" color="#FFE184" width="25" height="25" />
         </button>
       </div>
     </>
