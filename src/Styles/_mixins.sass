@@ -34,16 +34,21 @@
 
 
 @mixin dark
-    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a
+    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer
         color: variables.$dark-mode-text-color 
-    .work-container, .about-container, .contact-container
-        background: variables.$background-dark-mode  
-
+    .work-container, .about-container, .contact-container, footer, .navbar-container
+        background: variables.$background-dark-mode 
+    .footer-home
+        background: transparent
+    
 @mixin light
-    .light, .work-container, .about-container, .contact-container, .navbar-vertical a
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer
         color: variables.$light-mode-text-color
-    .work-container, .about-container, .contact-container
-        background: variables.$background-light-mode  
+    .work-container, .about-container, .contact-container, footer, .navbar-container
+        background: variables.$background-light-mode 
+    .footer-home
+        background: transparent 
+        color: variables.$dark-mode-text-color 
 
 @mixin darkmode
     // .dark
@@ -65,7 +70,7 @@
         overflow: hidden
         position: fixed
         right: 0
-        z-index: 2
+        z-index: 3
         
 @mixin background-home
     background-position: top
@@ -91,8 +96,6 @@
         display: flex
         justify-content: center
         align-items: center
-
-
 
 @media (max-width: variables.$breakpoint-lg)
     @mixin background-image 

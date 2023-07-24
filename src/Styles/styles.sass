@@ -50,8 +50,9 @@ body, html
 .navbar-container
   @include mixins.flex-column
   position: fixed
+  z-index: 2
   .navbar-home
-    // z-index: 5
+    z-index: 2
 
 .navbar-home
   @include mixins.flex-center
@@ -64,16 +65,18 @@ body, html
       text-transform: variables.$font-uppercase
 
 .navbar-container-vertical
-  height: 100%
-  position: fixed
+  height: 100vh
+  position: absolute
+  z-index: 1
   left: 0
   top: 17rem
   
   .navbar-vertical 
-      @include mixins.flex-column
-      // @include mixins.flex-center
-      padding: 0.5rem 0 0.5rem 0
-      width: 20vw      
+    @include mixins.flex-column
+    // @include mixins.flex-center
+    padding: 0.5rem 0 0.5rem 0
+    width: 20vw  
+    background-color: red      
 
   .logo-container
     width: 80vw
@@ -96,8 +99,16 @@ body, html
 .work-container, .about-container, .contact-container
   @include mixins.main-containers
   @include mixins.flex-center
-  height: 100vw
+  height: 100vh
 
+footer
+  @include mixins.flex-column
+  @include mixins.main-containers
+  height: 20vh
+  background-color: transparent
+
+.footer-home
+  padding-top: 80vh
 
 
 
