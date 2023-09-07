@@ -9,6 +9,12 @@ body, html
     padding: 0
     margin: 0
 
+h1, h2, h3, h4, h5, h6
+  font-family: variables.$font-stack
+
+h4, h5, h5
+  font-weight: variables.$font-stack-300
+
 .darkmode-background, .lightmode-background
     width: 100vw
     height: 100%
@@ -46,13 +52,17 @@ body, html
     button 
       @include mixins.button-navbar
       border-bottom: variables.$borders-horizontal-lightmode
+    
+    
+      
 
 .navbar-container
   @include mixins.flex-column
-  position: fixed
+  position: absolute
   z-index: 2
   .navbar-home
     z-index: 2
+    width: 100vw
 
 .navbar-home
   @include mixins.flex-center
@@ -64,20 +74,16 @@ body, html
       @include mixins.lists-style-darkmode
       text-transform: variables.$font-uppercase
 
-.navbar-container-vertical
-  height: 100vh
-  position: absolute
-  z-index: 1
-  left: 0
-  top: 17rem
-  
-  .navbar-vertical 
-    @include mixins.flex-column
-    // @include mixins.flex-center
-    padding: 0.5rem 0 0.5rem 0
-    width: 20vw  
-    background-color: red      
-
+.navbar-container-vertical nav 
+  display: flex
+  justify-content: center
+  width: 50vw
+  padding-bottom: 1rem
+  button
+    @include mixins.button-navbar
+  button:hover 
+      font-size: 1.3rem
+    
   .logo-container
     width: 80vw
     display: flex
@@ -96,10 +102,10 @@ body, html
     width: 30vw
   
 
-.work-container, .about-container, .contact-container
+.work-container, .about-container, .contact-container, .gallery-images container
   @include mixins.main-containers
   @include mixins.flex-center
-  height: 100vh
+  height: 100%
 
 footer
   @include mixins.flex-column
@@ -109,6 +115,39 @@ footer
 
 .footer-home
   padding-top: 80vh
+
+.gallery-images container
+  border: 1px solid blue
+  padding-top: 10rem
+
+.gallery-images
+  @include mixins.flex-column
+  width: inherit
+  align-items: center
+  padding: 0 1rem 0 1rem
+
+  img
+    width: 50vw
+    height: auto
+    border-radius: 5px
+
+#header.home header
+  background-color: transparent
+
+.filter-container
+  @include mixins.flex-column
+  width: 100vw
+  margin-top: 36.5vh
+
+.camera-icon
+  width: 5rem
+  margin-left: 2rem
+
+@media (max-width: 700px) 
+  .navbar-vertical
+    @include mixins.flex-center
+    flex-direction: row
+
 
 
 

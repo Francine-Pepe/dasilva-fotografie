@@ -3,22 +3,26 @@ import { navLinks } from "../../data";
 import Logo from "./Logo";
 import NavbarProps from "./NavbarProps";
 import { useLocation } from "react-router-dom";
+import "../../Styles/styles.sass";
 
 function NavbarHome() {
-  const [navBg, setNavBg] = useState("light" || "dark");
+  const [navBg, setNavBg] = useState("transparent");
   const location = useLocation();
 
+  const path = useLocation().pathname;
+
   useEffect(() => {
-    // if (location.pathname === "/home") {
-    //   if (window.location.pathname === "/home") {
-    //     setNavBg("transparent");
-    //   }
-    // }
-    window.location.pathname === "/home" ? setNavBg("transparent") : setNavBg("light" || "dark") 
-  }, [location.pathname]);
+    window.location.pathname === "/home"
+      ? setNavBg("transparent")
+      : setNavBg("light" || "dark");
+  }, [location, path]);
 
   return (
-    <header className="navbar-container" style={{ backgroundColor: navBg }}>
+    <header
+      className="navbar-container"
+      style={{ background: navBg }}
+      id={"header " + location}
+    >
       <div className="logo-home-container">
         <Logo />
       </div>
@@ -36,4 +40,3 @@ function NavbarHome() {
 }
 
 export default NavbarHome;
-

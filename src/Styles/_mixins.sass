@@ -5,11 +5,18 @@
     justify-content: space-between
     align-items: center
 
+@mixin flex-space-around
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    padding: 1rem 0
+
 @mixin flex-center
     display: flex
     justify-content: center
     align-items: center
     gap: 5rem
+    // flex-direction: row
 
 @mixin flex-end
     // width: 100vw
@@ -20,7 +27,7 @@
 @mixin flex-column
     display: flex
     flex-direction: column
-    // align-items: center
+    align-items: center
     justify-content: center
 
 @mixin borders-horizontal
@@ -32,23 +39,31 @@
 @mixin lists-style-lightmode
     color: variables.$light-mode-nav-color
 
-
 @mixin dark
-    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer
+    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
         color: variables.$dark-mode-text-color 
     .work-container, .about-container, .contact-container, footer, .navbar-container
         background: variables.$background-dark-mode 
     .footer-home
         background: transparent
+    .navbar-container-vertical nav 
+        button
+            border-bottom: variables.$borders-vertical-darkmode
+        button:hover 
+            font-size: 1.3rem
     
 @mixin light
-    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
         color: variables.$light-mode-text-color
     .work-container, .about-container, .contact-container, footer, .navbar-container
         background: variables.$background-light-mode 
     .footer-home
         background: transparent 
         color: variables.$dark-mode-text-color 
+    .navbar-container-vertical nav 
+        button
+            border-bottom: variables.$borders-vertical-lightmode
+        
 
 @mixin darkmode
     // .dark
@@ -89,13 +104,18 @@
     width: 10rem
     background-color: transparent
     border: none
+    cursor: pointer
+    height: 3rem
+    font-family: variables.$font-stack
+    text-transform: variables.$font-uppercase
+    border-bottom: 1px solid
 
 @mixin main-containers
-        width: 100vw
-        height: auto
-        display: flex
-        justify-content: center
-        align-items: center
+    width: 100vw
+    height: auto
+    display: flex
+    justify-content: center
+    align-items: center
 
 @media (max-width: variables.$breakpoint-lg)
     @mixin background-image 

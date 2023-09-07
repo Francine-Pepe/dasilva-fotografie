@@ -1,11 +1,11 @@
 import "../Styles/styles.sass";
-import NavbarVertical from "./Navbar/NavbarVertical";
+import Filter from "./Filter";
 
 function Work() {
   return (
     <main className="work-container">
       <div className="main-containers">
-        <NavbarVertical />
+        <Filter />
       </div>
     </main>
   );

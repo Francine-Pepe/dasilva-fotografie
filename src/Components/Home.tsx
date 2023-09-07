@@ -6,12 +6,13 @@ function Home() {
   const getCurrentYear = () => {
     return new Date().getFullYear();
   };
+
   return (
     <div className="home-container">
       <div className="home-background">
         <div className="home-navbar">
-          <DarkLightMode />
-          <Navbar />
+          {/* <DarkLightMode /> */}
+          {/* <Navbar /> */}
           <footer className="footer-home">
             <section>
               <small>
