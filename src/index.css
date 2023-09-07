@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .navbar-vertical {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        flex-direction: row;
+    }
+    
+}
+   
