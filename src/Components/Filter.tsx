@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-
+import Gallery from "./ImagesFetched/Gallery";
+import { Container } from "react-bootstrap";
+import FilterIcon from "../Icons/FilterIcon";
+import Camera from "../Icons/Camera";
 
 function Filter() {
   const [data, setData] = useState<any[]>([]);
@@ -46,35 +49,55 @@ function Filter() {
 
   return (
     <div className="filter-container">
-      <header className="navbar-container-vertical">
-        {/* <Camera /> */}
-        <nav className="">
-          <button onClick={() => setFilter(data)}>All</button>
-          <button onClick={() => filterFoto("animals")}>Animals</button>
-          <button onClick={() => filterFoto("flowers")}>Flowers</button>
-          <button onClick={() => filterFoto("food")}>Food</button>
-          <button onClick={() => filterFoto("landscape")}>Landscape</button>
-          <button onClick={() => filterFoto("moon")}>Moon</button>
-          <button onClick={() => filterFoto("portrait")}>Portrait</button>
-          <button onClick={() => filterFoto("product")}>Product</button>
-        </nav>
-      </header>
-
       <div className="gallery-images container">
-        <Row xs={2} md={4} lg={6}>
-          {filterFoto.length > 0 && (
-            <Col xs={6} md={4} lg={true}>
-              {filter.map(
-                (foto: { name: string; image: string | undefined }, index) => (
-                  <div className="gallery-images" key={index}>
-                    <Image src={foto.image} />
-                    <h4>{foto.name}</h4>
-                  </div>
-                )
-              )}
-            </Col>
-          )}
-        </Row>
+        <header className="navbar-container-vertical">
+          <nav className="menu sub-menu">
+            <button onClick={() => setFilter(data)}>All</button>
+            <button onClick={() => filterFoto("animals")}>Animals</button>
+            <button onClick={() => filterFoto("flowers")}>Flowers</button>
+            <button onClick={() => filterFoto("food")}>Food</button>
+            <button onClick={() => filterFoto("landscape")}>Landscape</button>
+            <button onClick={() => filterFoto("moon")}>Moon</button>
+            <button onClick={() => filterFoto("portrait")}>Portrait</button>
+            <button onClick={() => filterFoto("product")}>Product</button>
+          </nav>
+          <ReturnToTop />
+        </header>
+
+        {filterFoto.length > 0 && (
+          <ImageList
+            sx={{ width: "80vw", height: "auto" }}
+            variant="quilted"
+            cols={4}
+            rowHeight={"auto"}
+          >
+            {filter.map(
+              (
+                foto: {
+                  key: Key | null | undefined;
+                  rows: number;
+                  cols: number;
+                  name: string;
+                  image: string;
+                },
+                index
+              ) => (
+                <ImageListItem
+                  key={index}
+                  cols={foto.cols || 1}
+                  rows={foto.rows || 1}
+                  className="photo"
+                >
+                  <img
+                    {...srcset(foto.image, 121, foto.rows, foto.cols)}
+                    alt={foto.name}
+                    loading="lazy"
+                  />
+                </ImageListItem>
+              )
+            )}
+          </ImageList>
+        )}
       </div>
     </div>
   );
