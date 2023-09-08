@@ -8,7 +8,6 @@
 @mixin flex-space-around
     display: flex
     justify-content: space-evenly
-    align-items: center
     padding: 1rem 0
 
 @mixin flex-center
@@ -16,10 +15,8 @@
     justify-content: center
     align-items: center
     gap: 5rem
-    // flex-direction: row
 
 @mixin flex-end
-    // width: 100vw
     float: right
     display: flex
     padding: 2rem 2rem 0 0
@@ -37,7 +34,7 @@
     color: variables.$dark-mode-text-color
 
 @mixin lists-style-lightmode
-    color: variables.$light-mode-nav-color
+    color: variables.$light-mode-text-color
 
 @mixin dark
     .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
@@ -46,12 +43,10 @@
         background: variables.$background-dark-mode 
     .footer-home
         background: transparent
-    .navbar-container-vertical nav 
-        button
-            border-bottom: variables.$borders-vertical-darkmode
-        button:hover 
-            font-size: 1.3rem
-    
+    .sub-menu button::before
+        transform-origin: 0 50%
+        background: #D9B54A
+        
 @mixin light
     .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
         color: variables.$light-mode-text-color
@@ -59,22 +54,18 @@
         background: variables.$background-light-mode 
     .footer-home
         background: transparent 
-        color: variables.$dark-mode-text-color 
-    .navbar-container-vertical nav 
-        button
-            border-bottom: variables.$borders-vertical-lightmode
-        
+        color: variables.$dark-mode-text-color  
+    .sub-menu button::before
+        transform-origin: 0 50%
+        background: #5D0003      
 
 @mixin darkmode
-    // .dark
         background-color: variables.$background-dark-mode
         color: variables.$dark-mode-text-color
 
 @mixin lightmode
-    // .light
         background-color: variables.$background-light-mode
         color: variables.$light-mode-text-color
-
 
 @mixin background-image 
     .dark, .light
@@ -93,7 +84,6 @@
     background-size: cover
     height: 100vh
 
-
 @mixin button
     width: auto
     background-color: transparent
@@ -101,14 +91,14 @@
     cursor: pointer
 
 @mixin button-navbar
-    width: 10rem
+    width: 5rem
     background-color: transparent
     border: none
     cursor: pointer
     height: 3rem
     font-family: variables.$font-stack
     text-transform: variables.$font-uppercase
-    border-bottom: 1px solid
+    text-align: left
 
 @mixin main-containers
     width: 100vw
@@ -117,16 +107,12 @@
     justify-content: center
     align-items: center
 
-@media (max-width: variables.$breakpoint-lg)
-    @mixin background-image 
-        .dark, .light
-            background-size: cover
-            object-fit: contain
-            width: 100vw
-            height: 100vh
-            background-repeat: no-repeat
-            background-position: center
-            overflow: hidden
+
+
+
+    
+
+
 
 
 
