@@ -2,10 +2,7 @@ import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import Gallery from "./ImagesFetched/Gallery";
-import { Container } from "react-bootstrap";
-import FilterIcon from "../Icons/FilterIcon";
-import Camera from "../Icons/Camera";
+
 
 function Filter() {
   const [data, setData] = useState<any[]>([]);
