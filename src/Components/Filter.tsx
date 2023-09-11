@@ -1,11 +1,17 @@
-import { useState, useEffect } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-import Gallery from "./ImagesFetched/Gallery";
-import { Container } from "react-bootstrap";
-import FilterIcon from "../Icons/FilterIcon";
-import Camera from "../Icons/Camera";
+
+import { useState, useEffect, Key } from "react";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ReturnToTop from "../Icons/ReturnToTop";
+
+function srcset(image: string, size: number, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+  };
+}
 
 function Filter() {
   const [data, setData] = useState<any[]>([]);
