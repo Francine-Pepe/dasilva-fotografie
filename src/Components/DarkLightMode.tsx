@@ -22,7 +22,7 @@ function DarkLightMode() {
   return (
     <div className={`DarkLightMode ${theme}`}>
       <div className="button-darkmode" onClick={toggleTheme}>
-        {theme ? <LightMode /> : <DarkMode />}
+        {theme === "dark" ? <DarkMode /> : <LightMode /> }
       </div>
     </div>
   );

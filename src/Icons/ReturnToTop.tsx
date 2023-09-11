@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 function ReturnToTop() {
@@ -31,9 +31,9 @@ function ReturnToTop() {
         >
           <Icon
             icon="icon-park-outline:to-top"
-            color="#303030"
             width="30"
             height="30"
+            className="icon-return-to-top"
           />
         </button>
       </div>

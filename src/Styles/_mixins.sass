@@ -46,6 +46,8 @@
     .sub-menu button::before
         transform-origin: 0 50%
         background: #D9B54A
+    .icon-return-to-top, .icon-darkmode
+        color: variables.$icon-darkmode
         
 @mixin light
     .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
@@ -57,7 +59,9 @@
         color: variables.$dark-mode-text-color  
     .sub-menu button::before
         transform-origin: 0 50%
-        background: #5D0003      
+        background: #5D0003   
+    .icon-return-to-top, .icon-lightmode
+        color: variables.$icon-lightmode   
 
 @mixin darkmode
         background-color: variables.$background-dark-mode

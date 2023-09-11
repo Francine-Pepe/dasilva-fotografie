@@ -4,11 +4,14 @@ import "../Styles/styles.sass";
 function LightMode() {
   return (
     <>
-      <div className="light">
-        <button>
-          <Icon icon="gg:dark-mode" color="#FFE184" width="25" height="25" />
-        </button>
-      </div>
+      <button>
+        <Icon
+          className="icon-lightmode"
+          icon="ph:moon"
+          width="25"
+          height="25"
+        />
+      </button>
     </>
   );
 }
