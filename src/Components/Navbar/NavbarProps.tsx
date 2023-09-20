@@ -1,16 +1,21 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
+import { navLinks } from "../../data";
 
 function NavbarProps(props: { name: string; link: string }) {
-  const { name, link } = props;
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to={link}>{name}</NavLink>
-        </li>
-      </ul>
-    </nav>
+    <>
+      {navLinks.map((data, index) => {
+        return (
+          <nav key={index}>
+            <ul>
+              <li>
+                <NavLink to={data.link} >{data.name}</NavLink>
+              </li>
+            </ul>
+          </nav>
+        );
+      })}
+    </>
   );
 }
 
