@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+    .navbar-home ul li {
+        display: flex;
+        flex-direction: column;
+    }
+  }
