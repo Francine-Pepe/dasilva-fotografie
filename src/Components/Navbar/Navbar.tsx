@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { navLinks } from "../../data";
 import Logo from "./Logo";
 import NavbarProps from "./NavbarProps";
 import { useLocation } from "react-router-dom";
 import "../../Styles/styles.sass";
+import MobileMenu from "./MobileMenu";
+import DarkLightMode from "../DarkLightMode";
 
-function NavbarHome() {
+function NavbarHome(props: any) {
+  const { name, link } = props;
+
   const [navBg, setNavBg] = useState("transparent");
   const location = useLocation();
 
@@ -24,16 +27,12 @@ function NavbarHome() {
       id={"header " + location}
     >
       <div className="logo-home-container">
+        <MobileMenu />
         <Logo />
+        <DarkLightMode />
       </div>
       <div className="navbar-home">
-        {navLinks.map((data, index) => {
-          return (
-            <nav key={index}>
-              <NavbarProps name={data.name} link={data.link} />
-            </nav>
-          );
-        })}
+        <NavbarProps name={name} link={link} />
       </div>
     </header>
   );
