@@ -22,7 +22,7 @@ h4, h5, h5
 
 .button-darkmode button
   @include mixins.button
-  @include mixins.flex-end    
+  // @include mixins.flex-end    
 
 .dark
   @include mixins.dark
@@ -34,6 +34,9 @@ h4, h5, h5
     button 
       @include mixins.button-navbar
       border-bottom: variables.$borders-horizontal-darkmode
+  small
+      @include mixins.lists-style-darkmode
+
 
 .light
   @include mixins.light
@@ -42,8 +45,10 @@ h4, h5, h5
     border-top: variables.$borders-horizontal-lightmode
     border-bottom: variables.$borders-horizontal-lightmode
   .navbar-container
-    ul li a
+    ul li a, small
       @include mixins.lists-style-lightmode
+      @include mixins.lists-general-style
+
   .home-background
     background: url("https://live.staticflickr.com/65535/53018570307_cb1cb6f573_b.jpg")
     @include mixins.background-home 
@@ -53,13 +58,16 @@ h4, h5, h5
       @include mixins.button-navbar
       border-bottom: variables.$borders-horizontal-darkmode   
       
-.navbar-container
+.navbar-container 
   @include mixins.flex-column
+  @include mixins.sm-screen
+  @include mixins.bigger-screens
   position: absolute
   z-index: 2
   .navbar-home
     z-index: 2
     width: 100vw
+
 
 .navbar-home
   @include mixins.flex-center
@@ -71,6 +79,13 @@ h4, h5, h5
       @include mixins.lists-style-darkmode
       text-transform: variables.$font-uppercase
 
+.logo-home-container
+  display: flex
+  width: 100vw
+  align-items: center
+  justify-content: space-around
+
+
 .navbar-container-vertical nav 
   display: flex
   width: auto
@@ -78,24 +93,12 @@ h4, h5, h5
   @include mixins.flex-column
   button
     @include mixins.button-navbar
-    
-  .logo-container
-    width: 80vw
-    display: flex
-    justify-content: space-between    
-    float: right
-
-    .logo
-      width: 80vw
-      display: flex
-      justify-content: center   
 
 .logo-component 
   @include mixins.flex-center
-  width: 100vw
+  // width: 100vw
   img
-    width: 30vw
-  
+    width: 30vw  
 
 .work-container, .about-container, .contact-container, .gallery-images container
   @include mixins.main-containers
@@ -112,7 +115,6 @@ footer
   padding-top: 80vh
 
 .gallery-images container
-  border: 1px solid blue
   padding-top: 10rem
 
 .gallery-images
@@ -131,7 +133,7 @@ footer
 .filter-container
   display: flex
   width: 100vw
-  margin-top: 36.5vh
+  margin-top: 20%
 
 .camera-icon
   width: 5rem
@@ -164,6 +166,11 @@ footer
 .menu button:hover::before
   transform: scale3d(1,1,1)
 
+.menu button:focus, .navbar-home a:focus
+  // color: variables.$button-color-focus-lightmode
+  font-weight:  bold
+
+
 .scroll-to-top
   position: fixed 
   width: 100%
@@ -179,6 +186,20 @@ footer
 
 .photo img:hover
   background-color: white
+
+ul li a, small
+  @include mixins.lists-general-style
+  @include mixins.lists-style-lightmode
+
+.hamburger-icon 
+  @include mixins.flex-center
+
+
+  
+
+
+
+
 
 
 

@@ -1,4 +1,3 @@
-
 import { useState, useEffect, Key } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
@@ -46,6 +45,7 @@ function Filter() {
   const filterFoto = (cat: string) => {
     const updatedList = data.filter((x) => x.type === cat);
     setFilter(updatedList);
+    
   };
 
   // const ShowFotos = (props: any) => {
@@ -69,13 +69,13 @@ function Filter() {
           </nav>
           <ReturnToTop />
         </header>
-
         {filterFoto.length > 0 && (
           <ImageList
-            sx={{ width: "80vw", height: "auto" }}
+            sx={{ maxWidth: "80vw", height: "auto" }}
             variant="quilted"
             cols={4}
             rowHeight={"auto"}
+            className="image-list-grid"
           >
             {filter.map(
               (

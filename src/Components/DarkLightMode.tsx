@@ -11,7 +11,6 @@ function DarkLightMode() {
     } else {
       setTheme("dark");
     }
-    console.log("I was clicked");
   };
 
   useEffect(() => {

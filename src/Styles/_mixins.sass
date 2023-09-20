@@ -16,11 +16,6 @@
     align-items: center
     gap: 5rem
 
-@mixin flex-end
-    float: right
-    display: flex
-    padding: 2rem 2rem 0 0
-
 @mixin flex-column
     display: flex
     flex-direction: column
@@ -36,6 +31,11 @@
 @mixin lists-style-lightmode
     color: variables.$light-mode-text-color
 
+@mixin lists-general-style
+    text-transform: uppercase
+    text-decoration: none
+    font-family: "Poppins", sans-serif
+
 @mixin dark
     .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
         color: variables.$dark-mode-text-color 
@@ -48,9 +48,12 @@
         background: #D9B54A
     .icon-return-to-top, .icon-darkmode
         color: variables.$icon-darkmode
+
+    .menu button:focus, .navbar-home a:focus
+        color: variables.$button-color-focus-darkmode
         
 @mixin light
-    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus
         color: variables.$light-mode-text-color
     .work-container, .about-container, .contact-container, footer, .navbar-container
         background: variables.$background-light-mode 
@@ -75,12 +78,9 @@
     .dark, .light
         background-size: cover
         object-fit: contain
-        width: 5rem
+        // width: 5rem
         background-repeat: no-repeat
-        overflow: hidden
-        position: fixed
-        right: 0
-        z-index: 3
+        overflow: hidden        
         
 @mixin background-home
     background-position: top
@@ -110,6 +110,33 @@
     display: flex
     justify-content: center
     align-items: center
+    overflow: hidden
+
+// Media Queries
+
+@mixin bigger-screens
+    @media(min-width: 577px)
+        .navbar-mobile
+            visibility: hidden     
+
+@mixin sm-screen
+  @media(max-width: variables.$breakpoint-sm)
+    .navbar-home 
+        display: none
+    
+    .navbar-mobile
+        display: block
+
+    .navbar-container
+        display: flex
+
+    .navbar-container-vertical nav button
+        font-size: 0.2rem
+
+    
+
+    
+    
 
 
 
