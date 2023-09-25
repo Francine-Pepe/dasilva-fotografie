@@ -2,6 +2,7 @@ import { useState, useEffect, Key } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ReturnToTop from "../Icons/ReturnToTop";
+import Loading from "./Loading";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
@@ -45,7 +46,6 @@ function Filter() {
   const filterFoto = (cat: string) => {
     const updatedList = data.filter((x) => x.type === cat);
     setFilter(updatedList);
-    
   };
 
   // const ShowFotos = (props: any) => {
@@ -69,7 +69,7 @@ function Filter() {
           </nav>
           <ReturnToTop />
         </header>
-        {filterFoto.length > 0 && (
+        {loading ? <Loading /> : filterFoto.length > 0 && (
           <ImageList
             sx={{ maxWidth: "80vw", height: "auto" }}
             variant="quilted"
