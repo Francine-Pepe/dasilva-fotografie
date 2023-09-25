@@ -23,9 +23,6 @@ export default function MobileMenu(props: any) {
             gap: "3rem",
             backgroundColor: "#ffffff",
           },
-          // gutters: {
-          //   backgroundColor: "red",
-          // },
         },
       },
       MuiMenu: {
@@ -52,7 +49,10 @@ export default function MobileMenu(props: any) {
       {(popupState) => (
         <React.Fragment>
           <div className="navbar-mobile">
-            <Button {...bindTrigger(popupState)} sx={{ minWidth: 0 }}>
+            <Button
+              {...bindTrigger(popupState)}
+              sx={{ minWidth: 0, padding: 0 }}
+            >
               <Hamburger />
             </Button>
             <ThemeProvider theme={theme}>
