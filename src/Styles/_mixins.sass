@@ -16,11 +16,18 @@
     align-items: center
     gap: 5rem
 
+
 @mixin flex-column
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
+
+@mixin flex-end
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
 
 @mixin borders-horizontal
     border: 2px solid #174C4F
@@ -119,6 +126,11 @@
         .navbar-mobile
             visibility: hidden     
 
+        .button-darkmode button
+            position: absolute
+            right: 2rem
+
+
 @mixin sm-screen
   @media(max-width: variables.$breakpoint-sm)
     .navbar-home 
@@ -132,6 +144,8 @@
 
     .navbar-container-vertical nav button
         font-size: 0.2rem
+
+    
 
     
 
