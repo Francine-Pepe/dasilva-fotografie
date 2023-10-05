@@ -7,7 +7,7 @@
 
 @mixin flex-space-around
     display: flex
-    justify-content: space-evenly
+    justify-content: space-around
     padding: 1rem 0
 
 @mixin flex-center
@@ -15,7 +15,6 @@
     justify-content: center
     align-items: center
     gap: 5rem
-
 
 @mixin flex-column
     display: flex
@@ -28,6 +27,10 @@
     justify-content: flex-end
     align-items: center
 
+@mixin flex-column-align-center
+    display: flex
+    flex-direction: column
+    align-items: center
 
 @mixin borders-horizontal
     border: 2px solid #174C4F
@@ -82,8 +85,8 @@
         color: variables.$light-mode-text-color
 
 @mixin background-image 
-    .dark, .light
-        background-size: cover
+    .dark, .light, .about-content
+        // background-size: cover
         object-fit: contain
         // width: 5rem
         background-repeat: no-repeat
@@ -121,6 +124,24 @@
 
 // Media Queries
 
+@mixin extra-big-screens
+@media(min-width: variables.$breakpoint-lg)
+    .about-content
+        .about-img
+            img
+                height: 100vh        
+
+@mixin big-screens
+@media(max-width: variables.$breakpoint-lg)
+    .about-content
+        .about-text
+            padding: 1rem 0 2rem 0
+        .about-text p
+            line-height: variables.$line-height-text-xs
+            font-size: 0.8em
+            padding: 0 1rem
+
+
 @mixin bigger-screens
     @media(min-width: 577px)
         .navbar-mobile
@@ -130,20 +151,56 @@
             position: absolute
             right: 2rem
 
+@mixin md-screen
+@media(max-width: variables.$breakpoint-md)
+    .about-content
+        
 
 @mixin sm-screen
-  @media(max-width: variables.$breakpoint-sm)
-    .navbar-home 
-        display: none
-    
-    .navbar-mobile
-        display: block
-
+@media(max-width: variables.$breakpoint-sm)
     .navbar-container
         display: flex
 
-    .navbar-container-vertical nav button
-        font-size: 0.2rem
+        .navbar-home 
+            display: none
+            
+        .navbar-mobile
+            display: block
+
+        .navbar-container-vertical nav button
+            font-size: 0.2rem
+
+    .work-container
+        .filter-container
+            margin-top: 12%
+
+    .about-container
+        .about-content
+            width: 100vw
+            flex-direction: column
+            margin-top: 10%
+
+        .about-img, .about-text, .about-bg-image
+            width: auto
+
+        .about-img
+            padding: 3rem 2rem 2rem 2rem  
+        
+        .about-bg-image
+            width: 60%
+
+        .about-text p
+            padding: 0 2rem
+
+@mixin xs-screen
+@media(max-width: variables.$breakpoint-xs)
+    .about-content
+        .about-text p
+            // line-height: variables.$line-height-text-xs
+            // padding: 1rem
+              
+
+
 
     
 
