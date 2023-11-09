@@ -9,7 +9,7 @@ body, html
     padding: 0
     margin: 0
 
-h1, h2, h3, h4, h5, h6, p
+h1, h2, h3, h4, h5, h6, p, label
   font-family: variables.$font-stack
 
 h4, h5, h5
@@ -30,12 +30,18 @@ h4, h5, h5
     background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg")
     @include mixins.background-home
   .navbar-vertical
-    button 
+    button contact-button-container
       @include mixins.button-navbar
       border-bottom: variables.$borders-horizontal-darkmode
   small
       @include mixins.lists-style-darkmode
 
+  .contact-button
+    background: variables.$button-border-darkmode  
+
+  .contact-button:hover
+    background: variables.$background-light-mode
+    color: variables.$light-mode-text-color
 
 .light
   @include mixins.light
@@ -56,7 +62,51 @@ h4, h5, h5
     button 
       @include mixins.button-navbar
       border-bottom: variables.$borders-horizontal-darkmode   
-      
+
+  .contact-button
+    background: variables.$button-border-lightmode
+
+  .contact-button:hover
+    background: variables.$background-dark-mode
+    color: variables.$dark-mode-text-color
+
+// Send button
+
+.contact-button
+  transition: all 0.5s
+  position: relative
+  cursor: pointer
+
+.contact-button::before 
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1
+  transition: all 1s
+
+.contact-button:hover::before 
+  opacity: 0 
+  transform: scale(0.5,0.5)
+
+.contact-button::after 
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1
+  opacity: 0
+  transition: all 1s
+  transform: scale(1.2,1.2)
+
+.contact-button:hover::after 
+  opacity: 1
+  transform: scale(1,1)    
+
 .navbar-container 
   @include mixins.flex-column
   @include mixins.sm-screen
@@ -98,7 +148,6 @@ h4, h5, h5
 
 .work-container, .about-container, .contact-container, .gallery-images container
   @include mixins.main-containers
-  @include mixins.flex-center
   height: 100%
 
 .about-text 
@@ -109,7 +158,6 @@ h4, h5, h5
 
     img
       width: 100% 
-
 
 .about-img, .about-text, .about-bg-image
   width: 50%
@@ -126,13 +174,19 @@ h4, h5, h5
     line-height: variables.$line-height-text
     padding: 0 2rem     
 
-footer
+.footer section
   @include mixins.flex-column
   @include mixins.main-containers
   height: 20vh
   background-color: transparent
+  position: relative
+
+  p
+    .developed-by
+    font-size: 0.8rem
 
 .footer-home
+  @include mixins.flex-center
   padding-top: 80vh
 
 .gallery-images container
@@ -151,14 +205,67 @@ footer
 #header.home header
   background-color: transparent
 
-.filter-container, .about-content
+.filter-container, .about-content, .contact-content
   display: flex
   width: 100vw
   margin-top: 25%
   
+
+  .contact-address, .contact-form
+    width: 100%
+    padding: 2rem
+
+  .contact-button 
+    margin-top: 2rem 
+          
 .camera-icon
   width: 5rem
   margin-left: 2rem
+
+.contact-container
+  @include mixins.flex-start
+  // position: relative
+  
+  img
+    position: absolute
+    width: 100vw
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+    filter: blur(10px)
+    -webkit-backdrop-filter: blur(9.7px)
+    
+  .contact-address, .contact-form
+    z-index: 1    
+
+    p, button
+      text-transform: variables.$font-uppercase      
+
+    a
+      @include mixins.lists-general-style
+
+    .contact-inputs:nth-child(n+2)
+      padding-top: 2rem
+
+    .contact-inputs
+      display: flex
+      flex-direction: column
+      gap: 0.5rem    
+
+      input
+        height: 2rem
+
+      textarea
+        height: 10rem
+
+      input, textarea
+        outline: none
+        caret-color: variables.$button-color-focus-darkmode
+
+    .contact-button-container
+      @include mixins.flex-center      
+
+    .contact-button
+      @include mixins.linear-gradient
+      width: 7rem           
 
 // Sub-menu
 
