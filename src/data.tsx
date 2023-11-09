@@ -53,3 +53,48 @@ export const aboutPage = [
     text: "I am Francine, a Web Developer and self-taught Photographer.\nPhotography became part of my life since I moved to Hamburg, Germany. It helped me through a very difficult time - when I lost my father. He loved photography! The first camera I used belonged to him - a Canon 450D. Naturally, I still have it, but I have decided to keep it very well guarded and safe. It has been used to record many, many beautiful moments, so I would love to keep it very well preserved. At the moment, my faithful companion is a Canon 250D, and a diverse kit of lenses. Here's a bit of my work and my photographic vision."
   }
 ]
+
+export const contactAddress = [
+  {
+    title: "da silva fotografie",
+    email: "contact@dasilvafotografie.de",
+    mailTo: "mailto:franmelopepe@gmail.com",
+    phone: "(+49) 01522 2801863",
+    country: "Hamburg | DE",
+    
+  }
+]
+
+export const footerData = [
+  {
+    ownerName: "da silva fotografie",
+    developedBy: "Developed by: Francine Melo | 2023 ",
+    link: "https://www.francinemelopepe.de/"
+  }
+]
+
+export const ContactFormData = [
+  {
+    id: "name",
+    title: "Name:",
+    htmlFor: "name",
+    name: "user_name",
+    type: "text",
+    placeholder: "How should I call you?",
+  },
+  {
+    id: "email",
+    title: "E-mail:",
+    htmlFor: "email",
+    name: "user_email",
+    type: "text",
+    placeholder: "Is contacting you by email more comfortable? Great! You can put it in this space.",
+  },
+  {
+    id: "phone",
+    title: "Phone:",
+    htmlFor: "phone",
+    name: "user_phone",
+    type: "tel",
+  },
+]
