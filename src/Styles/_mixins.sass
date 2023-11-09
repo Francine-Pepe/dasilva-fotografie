@@ -22,6 +22,12 @@
     align-items: center
     justify-content: center
 
+@mixin flex-start
+    display: flex
+    justify-content: center
+    align-items: flex-start
+
+
 @mixin flex-end
     display: flex
     justify-content: flex-end
@@ -46,8 +52,15 @@
     text-decoration: none
     font-family: "Poppins", sans-serif
 
+@mixin linear-gradient
+    // background: variables.$button-border-lightmode
+    height: 3rem
+    background-repeat: no-repeat
+    background-size: 20px 20px
+    border: none
+
 @mixin dark
-    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button
+    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, footer a, a
         color: variables.$dark-mode-text-color 
     .work-container, .about-container, .contact-container, footer, .navbar-container
         background: variables.$background-dark-mode 
@@ -58,12 +71,16 @@
         background: #D9B54A
     .icon-return-to-top, .icon-darkmode
         color: variables.$icon-darkmode
-
     .menu button:focus, .navbar-home a:focus
         color: variables.$button-color-focus-darkmode
+    input, textarea
+        border: none
+        border-bottom: variables.$input-border-darkmode
+        background: transparent
+        // box-shadow: 0 4px 30px variables.$input-box-shadow-darkmode        
         
 @mixin light
-    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus, footer a, a
         color: variables.$light-mode-text-color
     .work-container, .about-container, .contact-container, footer, .navbar-container
         background: variables.$background-light-mode 
@@ -75,6 +92,11 @@
         background: #5D0003   
     .icon-return-to-top, .icon-lightmode
         color: variables.$icon-lightmode   
+    input, textarea
+        border: none
+        border-bottom: variables.$input-border-lightmode
+        background: transparent
+        // box-shadow: 0 4px 30px variables.$input-box-shadow-lightmode
 
 @mixin darkmode
         background-color: variables.$background-dark-mode
@@ -85,10 +107,9 @@
         color: variables.$light-mode-text-color
 
 @mixin background-image 
-    .dark, .light, .about-content
-        // background-size: cover
-        object-fit: contain
-        // width: 5rem
+    .dark, .light
+        background-size: cover
+        object-fit: cover
         background-repeat: no-repeat
         overflow: hidden        
         
@@ -138,7 +159,7 @@
             padding: 1rem 0 2rem 0
         .about-text p
             line-height: variables.$line-height-text-xs
-            font-size: 0.8em
+            // font-size: 0.8em
             padding: 0 1rem
 
 
@@ -153,8 +174,7 @@
 
 @mixin md-screen
 @media(max-width: variables.$breakpoint-md)
-    .about-content
-        
+    .about-content        
 
 @mixin sm-screen
 @media(max-width: variables.$breakpoint-sm)
@@ -191,6 +211,14 @@
 
         .about-text p
             padding: 0 2rem
+
+    .contact-container
+        width: 100vw
+        flex-direction: column
+
+    main
+        .contact-content:nth-child(n+2)
+            margin-top: 0
 
 @mixin xs-screen
 @media(max-width: variables.$breakpoint-xs)

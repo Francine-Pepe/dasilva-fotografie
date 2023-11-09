@@ -4,8 +4,9 @@ import Home from "./Components/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Work from "./Components/Work";
 import About from "./Components/About";
-import Contact from "./Components/Contact";
+import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer";
+import FooterHome from "./Components/FooterHome";
 
 function App() {
   return (
