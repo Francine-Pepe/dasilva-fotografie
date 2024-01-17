@@ -68,7 +68,7 @@ export const contactAddress = [
 export const footerData = [
   {
     ownerName: "da silva fotografie",
-    developedBy: "Developed by: Francine Melo | 2023 ",
+    developedBy: "Developed by: Francine Melo | 2024 ",
     link: "https://www.francinemelopepe.de/"
   }
 ]
