@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/dasilva-fotografie/static/css/main.1868a5e8.css",
+    "main.js": "/dasilva-fotografie/static/js/main.ba57a4e7.js",
+    "static/js/787.11cf03e8.chunk.js": "/dasilva-fotografie/static/js/787.11cf03e8.chunk.js",
+    "static/media/camera.png": "/dasilva-fotografie/static/media/camera.3518c6e521653434752d.png",
+    "static/media/Francine-bg.jpg": "/dasilva-fotografie/static/media/Francine-bg.c585e9831ed99e072fb2.jpg",
+    "static/media/loading-transparent-bg.png": "/dasilva-fotografie/static/media/loading-transparent-bg.8d9c177cd0301f908501.png",
+    "static/media/dasilva_logo.png": "/dasilva-fotografie/static/media/dasilva_logo.e8db7792ccfbb737844b.png",
+    "index.html": "/dasilva-fotografie/index.html",
+    "main.1868a5e8.css.map": "/dasilva-fotografie/static/css/main.1868a5e8.css.map",
+    "main.ba57a4e7.js.map": "/dasilva-fotografie/static/js/main.ba57a4e7.js.map",
+    "787.11cf03e8.chunk.js.map": "/dasilva-fotografie/static/js/787.11cf03e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1868a5e8.css",
+    "static/js/main.ba57a4e7.js"
+  ]
+}
