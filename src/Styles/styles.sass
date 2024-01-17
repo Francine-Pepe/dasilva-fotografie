@@ -1,6 +1,8 @@
 @use 'variables'
 @use 'mixins'
 
+
+
 body, html
     width: 100vw
     height: 100
@@ -39,10 +41,6 @@ h4, h5, h5
   .contact-button
     background: variables.$button-border-darkmode  
 
-  .contact-button:hover
-    background: variables.$background-light-mode
-    color: variables.$light-mode-text-color
-
 .light
   @include mixins.light
   @include mixins.background-image 
@@ -66,47 +64,7 @@ h4, h5, h5
   .contact-button
     background: variables.$button-border-lightmode
 
-  .contact-button:hover
-    background: variables.$background-dark-mode
-    color: variables.$dark-mode-text-color
-
-// Send button
-
-.contact-button
-  transition: all 0.5s
-  position: relative
-  cursor: pointer
-
-.contact-button::before 
-  content: ''
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: 1
-  transition: all 1s
-
-.contact-button:hover::before 
-  opacity: 0 
-  transform: scale(0.5,0.5)
-
-.contact-button::after 
-  content: ''
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: 1
-  opacity: 0
-  transition: all 1s
-  transform: scale(1.2,1.2)
-
-.contact-button:hover::after 
-  opacity: 1
-  transform: scale(1,1)    
-
+ 
 .navbar-container 
   @include mixins.flex-column
   @include mixins.sm-screen
@@ -300,7 +258,7 @@ h4, h5, h5
 
 .scroll-to-top
   position: fixed 
-  width: 100%
+  width: auto
   left: 10
   bottom: 3rem
   height: auto
@@ -337,6 +295,23 @@ ul li a, small
     transform: rotate(0deg) 
   to 
     transform: rotate(359deg)
+
+// transition page
+
+.transition-fade
+  opacity: 1
+  transition: 1000ms
+  transform: translateX(0)
+  transform-origin: left
+
+html.is-animating .transition-fade
+  opacity: 1
+  transform: translateX(100%)
+
+html.is-leaving .transition-fade
+  opacity: 0
+
+
 
 
 

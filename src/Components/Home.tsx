@@ -1,4 +1,5 @@
 import "../Styles/styles.sass";
+import { motion as m } from "framer-motion";
 
 function Home() {
   const getCurrentYear = () => {
@@ -6,19 +7,26 @@ function Home() {
   };
 
   return (
-    <div className="home-container">
-      <div className="home-background">
-        <div className="home-navbar">
-          <footer className="footer-home">
-            <section>
-              <small>
-                &copy; Copyright {getCurrentYear()} - Da Silva Fotografie
-              </small>
-            </section>
-          </footer>
+    <m.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 1 }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+    >
+      <main className="home-container">
+        <div className="home-background">
+          <div className="home-navbar">
+            <footer className="footer-home">
+              <section>
+                <small>
+                  &copy; Copyright {getCurrentYear()} - Da Silva Fotografie
+                </small>
+              </section>
+            </footer>
+          </div>
         </div>
-      </div>
-    </div>
+      </main>
+    </m.div>
   );
 }
 

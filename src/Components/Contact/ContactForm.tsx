@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ContactFormData } from "../../data";
 import swal from "sweetalert";
+import { motion as m } from "framer-motion";
 
 function ContactForm() {
   const form = useRef(null);
@@ -52,7 +53,11 @@ function ContactForm() {
           <label htmlFor="message">Message:</label>
           <textarea id="message" name="message" required />
         </div>
-        <div className="contact-button-container">
+        <m.div
+          className="contact-button-container"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+        >
           <button
             className="contact-button"
             type="submit"
@@ -64,9 +69,9 @@ function ContactForm() {
               })
             }
           >
-            Send 
+            Send
           </button>
-        </div>
+        </m.div>
       </form>
     </main>
   );
