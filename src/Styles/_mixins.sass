@@ -60,9 +60,9 @@
     border: none
 
 @mixin dark
-    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, footer a, a
+    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, footer a, a, .error-page, .contact-inputs input, textarea
         color: variables.$dark-mode-text-color 
-    .work-container, .about-container, .contact-container, footer, .navbar-container
+    .work-container, .about-container, .contact-container, footer, .navbar-container, .error-page
         background: variables.$background-dark-mode 
     .footer-home
         background: transparent
@@ -80,9 +80,9 @@
         // box-shadow: 0 4px 30px variables.$input-box-shadow-darkmode        
         
 @mixin light
-    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus, footer a, a
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus, footer a, a, .error-page
         color: variables.$light-mode-text-color
-    .work-container, .about-container, .contact-container, footer, .navbar-container
+    .work-container, .about-container, .contact-container, footer, .navbar-container, .error-page
         background: variables.$background-light-mode 
     .footer-home
         background: transparent 
@@ -219,6 +219,9 @@
     main
         .contact-content:nth-child(n+2)
             margin-top: 0
+
+    .image-list-grid
+        grid-column: 2
 
 @mixin xs-screen
 @media(max-width: variables.$breakpoint-xs)
