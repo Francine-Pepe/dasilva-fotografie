@@ -8,14 +8,15 @@ import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer";
 // import FooterHome from "./Components/FooterHome";
 import { AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import ErrorPage from "./Components/ErrorPage";
+
 
 function App() {
 
 
   return (
     <>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter  basename={process.env.PUBLIC_URL}>
         <Navbar />
         <AnimatePresence>
           <Routes >
@@ -24,6 +25,7 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </AnimatePresence>
         <Footer />
