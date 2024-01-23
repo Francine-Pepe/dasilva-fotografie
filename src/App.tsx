@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Outlet, Route, Routes, Navigate } from "react-router-dom";
 import "./App.sass";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar/Navbar";
@@ -10,16 +10,13 @@ import Footer from "./Components/Footer";
 import { AnimatePresence } from "framer-motion";
 import ErrorPage from "./Components/ErrorPage";
 
-
 function App() {
-
-
   return (
     <>
-      <BrowserRouter  basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Navbar />
         <AnimatePresence>
-          <Routes >
+          <Routes>
             <Route index path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/work" element={<Work />} />
@@ -28,8 +25,10 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </AnimatePresence>
+        <Outlet />
+
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
