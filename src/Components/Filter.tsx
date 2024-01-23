@@ -69,40 +69,44 @@ function Filter() {
           </nav>
           <ReturnToTop />
         </header>
-        {loading ? <Loading /> : filterFoto.length > 0 && (
-          <ImageList
-            sx={{ maxWidth: "80vw", height: "auto" }}
-            variant="quilted"
-            cols={4}
-            rowHeight={"auto"}
-            className="image-list-grid"
-          >
-            {filter.map(
-              (
-                foto: {
-                  key: Key | null | undefined;
-                  rows: number;
-                  cols: number;
-                  name: string;
-                  image: string;
-                },
-                index
-              ) => (
-                <ImageListItem
-                  key={index}
-                  cols={foto.cols || 1}
-                  rows={foto.rows || 1}
-                  className="photo"
-                >
-                  <img
-                    {...srcset(foto.image, 121, foto.rows, foto.cols)}
-                    alt={foto.name}
-                    loading="lazy"
-                  />
-                </ImageListItem>
-              )
-            )}
-          </ImageList>
+        {loading ? (
+          <Loading />
+        ) : (
+          filterFoto.length > 0 && (
+            <ImageList
+              sx={{ maxWidth: "80vw", height: "100vh" }}
+              variant="quilted"
+              cols={4}
+              rowHeight={"auto"}
+              className="image-list-grid"
+            >
+              {filter.map(
+                (
+                  foto: {
+                    key: Key | null | undefined;
+                    rows: number;
+                    cols: number;
+                    name: string;
+                    image: string;
+                  },
+                  index
+                ) => (
+                  <ImageListItem
+                    key={index}
+                    cols={foto.cols || 1}
+                    rows={foto.rows || 1}
+                    className="photo"
+                  >
+                    <img
+                      {...srcset(foto.image, 121, foto.rows, foto.cols)}
+                      alt={foto.name}
+                      loading="lazy"
+                    />
+                  </ImageListItem>
+                )
+              )}
+            </ImageList>
+          )
         )}
       </div>
     </div>
