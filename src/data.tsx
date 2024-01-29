@@ -57,7 +57,7 @@ export const aboutPage = [
 export const contactAddress = [
   {
     title: "da silva fotografie",
-    email: "contact@dasilvafotografie.de",
+    email: "franmelopepe@gmail.com",
     mailTo: "mailto:franmelopepe@gmail.com",
     phone: "(+49) 01522 2801863",
     country: "Hamburg | DE",
