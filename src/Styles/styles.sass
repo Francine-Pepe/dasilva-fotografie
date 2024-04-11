@@ -41,6 +41,14 @@ h4, h5, h5
   .contact-button
     background: variables.$button-border-darkmode  
 
+  .contact-address
+    a p
+      color: variables.$background-light-mode
+
+  .contact-inputs
+    input[type="text"], textarea[id="message"]
+      color: variables.$dark-mode-text-color
+
 .light
   @include mixins.light
   @include mixins.background-image 
@@ -172,6 +180,8 @@ h4, h5, h5
   .contact-address, .contact-form
     width: 100%
     padding: 2rem
+
+    
 
   .contact-button 
     margin-top: 2rem 
@@ -315,6 +325,14 @@ html.is-animating .transition-fade
 
 html.is-leaving .transition-fade
   opacity: 0
+
+// Media Queries
+
+@media screen and (max-width: 800px) 
+  .image-list-grid
+    display: grid
+    columns: 1
+
 
 
 
