@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f8b44367.css",
-    "main.js": "/static/js/main.90db7a92.js",
+    "main.js": "/static/js/main.cf801f57.js",
     "static/js/453.2ab6aa9b.chunk.js": "/static/js/453.2ab6aa9b.chunk.js",
     "static/media/camera.png": "/static/media/camera.3518c6e521653434752d.png",
     "static/media/Francine-bg.jpg": "/static/media/Francine-bg.c585e9831ed99e072fb2.jpg",
@@ -9,11 +9,11 @@
     "static/media/dasilva_logo.png": "/static/media/dasilva_logo.e8db7792ccfbb737844b.png",
     "index.html": "/index.html",
     "main.f8b44367.css.map": "/static/css/main.f8b44367.css.map",
-    "main.90db7a92.js.map": "/static/js/main.90db7a92.js.map",
+    "main.cf801f57.js.map": "/static/js/main.cf801f57.js.map",
     "453.2ab6aa9b.chunk.js.map": "/static/js/453.2ab6aa9b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f8b44367.css",
-    "static/js/main.90db7a92.js"
+    "static/js/main.cf801f57.js"
   ]
 }
