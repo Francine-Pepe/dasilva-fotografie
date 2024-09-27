@@ -1,4 +1,11 @@
-import { HashRouter, Outlet, Route, Routes, Navigate } from "react-router-dom";
+import {
+  HashRouter,
+  Outlet,
+  Route,
+  Routes,
+  Navigate,
+  BrowserRouter,
+} from "react-router-dom";
 import "./App.sass";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar/Navbar";
@@ -9,11 +16,12 @@ import Footer from "./Components/Footer";
 // import FooterHome from "./Components/FooterHome";
 import { AnimatePresence } from "framer-motion";
 import ErrorPage from "./Components/ErrorPage";
+import UploadPhotos from "./Components/UploadPhotos";
 
 function App() {
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Navbar />
         <AnimatePresence>
           <Routes>
@@ -22,13 +30,14 @@ function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            {/* <Route path="/upload" element={<UploadPhotos />} /> */}
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </AnimatePresence>
         <Outlet />
 
         <Footer />
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
