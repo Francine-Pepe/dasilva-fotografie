@@ -3,6 +3,7 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ReturnToTop from "../Icons/ReturnToTop";
 import Loading from "./Loading";
+import { useMediaQuery } from "@mui/material";
 
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
@@ -48,6 +49,8 @@ function Filter() {
     setFilter(updatedList);
   };
 
+  const matches = useMediaQuery("(max-width:576px)");
+
   // const ShowFotos = (props: any) => {
   //   function filterProduct(arg0: string): void {
   //     throw new Error("Function not implemented.");
@@ -58,14 +61,14 @@ function Filter() {
       <div className="gallery-images container">
         <header className="navbar-container-vertical">
           <nav className="menu sub-menu">
-            <button onClick={() => setFilter(data)}>All</button>
-            <button onClick={() => filterFoto("animals")}>Animals</button>
-            <button onClick={() => filterFoto("flowers")}>Flowers</button>
-            <button onClick={() => filterFoto("food")}>Food</button>
-            <button onClick={() => filterFoto("landscape")}>Landscape</button>
-            <button onClick={() => filterFoto("moon")}>Moon</button>
-            <button onClick={() => filterFoto("portrait")}>Portrait</button>
-            <button onClick={() => filterFoto("product")}>Product</button>
+            <button onClick={() => setFilter(data)}><h3>All</h3></button>
+            <button onClick={() => filterFoto("animals")}><h3>Animals</h3></button>
+            <button onClick={() => filterFoto("flowers")}><h3>Flowers</h3></button>
+            <button onClick={() => filterFoto("food")}><h3>Food</h3></button>
+            <button onClick={() => filterFoto("landscape")}><h3>Landscape</h3></button>
+            <button onClick={() => filterFoto("moon")}><h3>Moon</h3></button>
+            <button onClick={() => filterFoto("portrait")}><h3>Portrait</h3></button>
+            <button onClick={() => filterFoto("product")}><h3>Product</h3></button>
           </nav>
           <ReturnToTop />
         </header>
@@ -74,9 +77,14 @@ function Filter() {
         ) : (
           filterFoto.length > 0 && (
             <ImageList
-              sx={{ maxWidth: "80vw", height: "100vh" }}
-              variant="quilted"
-              cols={4}
+              sx={{
+                maxWidth: "95vw",
+                padding: "0 1rem",
+                margin: "0 auto"
+              }}
+              variant="masonry"
+              cols={matches ? 1 : 2}
+              gap={8}
               rowHeight={"auto"}
               className="image-list-grid"
             >
@@ -102,6 +110,7 @@ function Filter() {
                       alt={foto.name}
                       loading="lazy"
                     />
+                    <h4>{foto.name}</h4>
                   </ImageListItem>
                 )
               )}
