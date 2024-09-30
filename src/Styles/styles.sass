@@ -1,15 +1,14 @@
 @use 'variables'
 @use 'mixins'
 
-
-
 body, html
     width: 100vw
-    height: 100
+    height: auto
     font: variables.$font-stack
     color: variables.$dark-mode-text-color
     padding: 0
-    margin: 0
+    margin: 0 auto
+    overflow-x: hidden
 
 h1, h2, h3, h4, h5, h6, p, label
   font-family: variables.$font-stack
@@ -20,7 +19,7 @@ h4, h5, h5
 .darkmode-background, .lightmode-background
     width: 100vw
     height: 100%
-    overflow: hidden
+    // overflow: hidden
 
 .button-darkmode button
   @include mixins.button
@@ -32,7 +31,7 @@ h4, h5, h5
     background: url("https://live.staticflickr.com/65535/53018570272_8fd8e663c9_b.jpg")
     @include mixins.background-home
   .navbar-vertical
-    button contact-button-container
+    button .contact-button-container
       @include mixins.button-navbar
       border-bottom: variables.$borders-horizontal-darkmode
   small
@@ -79,9 +78,11 @@ h4, h5, h5
   @include mixins.bigger-screens
   position: absolute
   z-index: 2
+  width: 100%
   .navbar-home
     z-index: 2
-    width: 100vw
+    width: 100%
+    
 
 .navbar-home
   @include mixins.flex-center
@@ -98,21 +99,21 @@ h4, h5, h5
   align-items: center
   width: 100vw
 
+.navbar-container-vertical
+  width: 100%  
+
 .navbar-container-vertical nav 
-  display: flex
-  width: auto
+  @include mixins.flex-space-around
   padding-bottom: 1rem
-  @include mixins.flex-column
   button
     @include mixins.button-navbar
 
 .logo-component 
   @include mixins.flex-center
-  // width: 100vw
   img
     width: 30vw  
 
-.work-container, .about-container, .contact-container, .gallery-images container
+.work-container, .about-container, .contact-container, .gallery-images container, .upload-container
   @include mixins.main-containers
   height: 100%
 
@@ -157,11 +158,12 @@ h4, h5, h5
 
 .gallery-images container
   padding-top: 10rem
+  
 
 .gallery-images
-  @include mixins.flex-space-around
-  width: inherit
-  padding: 1rem 1rem 0 1rem
+  @include mixins.flex-column
+  max-width: 100vw
+  padding: 1rem
 
   img
     width: 50vw
@@ -171,17 +173,17 @@ h4, h5, h5
 #header.home header
   background-color: transparent
 
-.filter-container, .about-content, .contact-content
+.filter-container
+  margin-top: clamp(min(18vw), 250px, max(30vw))
+
+.about-content, .contact-content
   display: flex
   width: 100vw
-  margin-top: 25%
-  
+  margin-top: 25%  
 
   .contact-address, .contact-form
     width: 100%
-    padding: 2rem
-
-    
+    padding: 2rem    
 
   .contact-button 
     margin-top: 2rem 
@@ -240,6 +242,11 @@ h4, h5, h5
   height: 100vh     
   padding-top: 2rem
 
+.upload-container
+  width: 100vw
+  height: auto
+  padding-top: 45vh
+
 // Sub-menu
 
 .menu button
@@ -247,7 +254,7 @@ h4, h5, h5
   margin: 0 
 
 .menu button
-  display: block
+  @include mixins.flex-space-around-center
   position: relative
   padding: 4px 0
   
@@ -270,11 +277,10 @@ h4, h5, h5
 .menu button:focus, .navbar-home a:focus
   font-weight:  bold
 
-
 .scroll-to-top
   position: fixed 
   width: auto
-  left: 10
+  left: 5rem
   bottom: 3rem
   height: auto
   z-index: 1
@@ -328,10 +334,12 @@ html.is-leaving .transition-fade
 
 // Media Queries
 
-@media screen and (max-width: 800px) 
-  .image-list-grid
-    display: grid
-    columns: 1
+@media screen and (max-width: variables.$breakpoint-md) 
+  .navbar-container-vertical nav 
+    @include mixins.flex-wrap
+
+
+  
 
 
 

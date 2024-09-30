@@ -10,6 +10,11 @@
     justify-content: space-around
     padding: 1rem 0
 
+@mixin flex-space-around-center
+    display: flex
+    justify-content: space-around
+    align-items: center
+
 @mixin flex-center
     display: flex
     justify-content: center
@@ -38,6 +43,10 @@
     flex-direction: column
     align-items: center
 
+@mixin flex-wrap
+    display: flex
+    flex-wrap: wrap
+
 @mixin borders-horizontal
     border: 2px solid #174C4F
 
@@ -60,9 +69,9 @@
     border: none
 
 @mixin dark
-    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, footer a, .contact-address p .error-page, .contact-inputs input textarea
+    .dark, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, footer a, .contact-address p .error-page, .contact-inputs input textarea, .upload-container
         color: variables.$dark-mode-text-color 
-    .work-container, .about-container, .contact-container, footer, .navbar-container, .error-page
+    .work-container, .about-container, .contact-container, footer, .navbar-container, .error-page, .upload-container
         background: variables.$background-dark-mode 
     .footer-home
         background: transparent
@@ -80,9 +89,9 @@
         // box-shadow: 0 4px 30px variables.$input-box-shadow-darkmode        
         
 @mixin light
-    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus, footer a, a, .error-page
+    .light, .work-container, .about-container, .contact-container, .navbar-vertical a, footer, button, .menu button:focus, .navbar-home a:focus, footer a, a, .error-page, .upload-container
         color: variables.$light-mode-text-color
-    .work-container, .about-container, .contact-container, footer, .navbar-container, .error-page
+    .work-container, .about-container, .contact-container, footer, .navbar-container, .error-page, .upload-container
         background: variables.$background-light-mode 
     .footer-home
         background: transparent 
@@ -133,7 +142,7 @@
     height: 3rem
     font-family: variables.$font-stack
     text-transform: variables.$font-uppercase
-    text-align: left
+    // text-align: left
 
 @mixin main-containers
     width: 100vw
@@ -220,8 +229,8 @@
         .contact-content:nth-child(n+2)
             margin-top: 0
 
-    .image-list-grid
-        grid-column: 2
+    // .image-list-grid
+    //     grid-column: 2
 
 @mixin xs-screen
 @media(max-width: variables.$breakpoint-xs)
