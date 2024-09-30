@@ -14,7 +14,7 @@ import UploadPhotos from "./Components/UploadPhotos";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <AnimatePresence>
           <Routes>
@@ -30,7 +30,7 @@ function App() {
         <Outlet />
 
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
