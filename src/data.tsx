@@ -44,6 +44,10 @@ export const navLinksSubMenu = [
     name: "Product",
     link: "/work/product",
   },
+  {
+    name: "Event",
+    link: "/work/event",
+  },
 ];
 
 export const aboutPage = [
