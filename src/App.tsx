@@ -1,4 +1,4 @@
-import { HashRouter, Outlet, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Outlet, Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 import "./App.sass";
 import Home from "./Components/Home";
 import Navbar from "./Components/Navbar/Navbar";
@@ -14,7 +14,7 @@ import UploadPhotos from "./Components/UploadPhotos";
 function App() {
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Navbar />
         <AnimatePresence>
           <Routes>
@@ -30,7 +30,7 @@ function App() {
         <Outlet />
 
         <Footer />
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
