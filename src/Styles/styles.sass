@@ -78,11 +78,11 @@ h4, h5, h5
   @include mixins.bigger-screens
   position: absolute
   z-index: 2
-  width: 100%
+  width: 100vw
   .navbar-home
     z-index: 2
     width: 100%
-    
+    // margin: 0 auto
 
 .navbar-home
   @include mixins.flex-center
@@ -94,6 +94,12 @@ h4, h5, h5
       @include mixins.lists-style-darkmode
       text-transform: variables.$font-uppercase
 
+// .navbar-props
+//   width: 100%
+//   display: flex
+//   justify-content: space-evenly
+//   align-items: center
+
 .logo-home-container
   @include mixins.flex-space-around
   align-items: center
@@ -102,11 +108,28 @@ h4, h5, h5
 .navbar-container-vertical
   width: 100%  
 
+  h1
+    font-size: 1rem
+    margin: 0 auto
+
 .navbar-container-vertical nav 
   @include mixins.flex-space-around
-  padding-bottom: 1rem
+  // background-color: rgba(255, 195, 9, 1)
+  // padding-bottom: 1rem
+
   button
     @include mixins.button-navbar
+    width: 10rem
+    padding: 0.5rem 1rem
+    margin: 1rem
+    border: variables.$borders-horizontal-darkmode
+    border-radius: 5px
+    background-color: black
+
+
+  // button:hover
+  //   background-color: transparent
+  //   color: white
 
 .logo-component 
   @include mixins.flex-center
@@ -252,12 +275,12 @@ h4, h5, h5
 .menu button
   display: inline-block
   margin: 0 
+  
 
 .menu button
   @include mixins.flex-space-around-center
   position: relative
-  padding: 4px 0
-  
+  padding: 4px 0  
 
 .menu button::before
   content: ""
