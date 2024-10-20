@@ -60,6 +60,7 @@ function Filter() {
     <div className="filter-container">
       <div className="gallery-images container">
         <header className="navbar-container-vertical">
+          <h1>Filter by Category:</h1>
           <nav className="menu sub-menu">
             <button onClick={() => setFilter(data)}><h3>All</h3></button>
             <button onClick={() => filterFoto("animals")}><h3>Animals</h3></button>
@@ -69,6 +70,7 @@ function Filter() {
             <button onClick={() => filterFoto("moon")}><h3>Moon</h3></button>
             <button onClick={() => filterFoto("portrait")}><h3>Portrait</h3></button>
             <button onClick={() => filterFoto("product")}><h3>Product</h3></button>
+            <button onClick={() => filterFoto("event")}><h3>Event</h3></button>
           </nav>
           <ReturnToTop />
         </header>
