@@ -94,12 +94,6 @@ h4, h5, h5
       @include mixins.lists-style-darkmode
       text-transform: variables.$font-uppercase
 
-// .navbar-props
-//   width: 100%
-//   display: flex
-//   justify-content: space-evenly
-//   align-items: center
-
 .logo-home-container
   @include mixins.flex-space-around
   align-items: center
@@ -114,22 +108,15 @@ h4, h5, h5
 
 .navbar-container-vertical nav 
   @include mixins.flex-space-around
-  // background-color: rgba(255, 195, 9, 1)
-  // padding-bottom: 1rem
+  @include mixins.flex-wrap
 
   button
     @include mixins.button-navbar
     width: 10rem
-    padding: 0.5rem 1rem
+    // padding: 0.5rem 1rem
     margin: 1rem
-    // border: variables.$borders-horizontal-darkmode
     border-radius: 5px
-    // background-color: black
 
-
-  // button:hover
-  //   background-color: transparent
-  //   color: white
 
 .logo-component 
   @include mixins.flex-center
