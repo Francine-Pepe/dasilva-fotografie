@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function FetchApi() {
-  const url = "https://dasilva-fotografie-api.vercel.app/fotos";
+  const url = "https://dasilva-fotografie-api-tau.vercel.app/fotos";
   const [data, setData] = useState([]);
 
   const fetchInfo = () => {

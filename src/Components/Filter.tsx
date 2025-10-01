@@ -25,7 +25,7 @@ function Filter() {
       setLoading(true);
 
       const response = await fetch(
-        "https://dasilva-fotografie-api.vercel.app/fotos",
+        "https://dasilva-fotografie-api-tau.vercel.app/fotos",
         { mode: "cors" }
       );
       if (componentMounted) {
